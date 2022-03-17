@@ -12,8 +12,8 @@ function Main() {
 
   const emailRegex = /\S+@\S+\.\S+/;
 
-  const validateEmail = (event) => {
-    const email = event.target.value;
+  const validateEmail = (e) => {
+    const email = e.target.value;
     if (emailRegex.test(email)) {
       setIsValid(true);
       // setMessage('Your email looks good!');
@@ -25,6 +25,14 @@ function Main() {
     }
     
   };
+  const changeButtonColor = (e) => {
+    e.target.style.background = 'red';
+    e.target.style.cursor = 'pointer';
+    e.target.style.boxShadow = '0px 5px 5px 0px pink';
+    e.target.style.border = '1px pink solid';
+  };
+  
+  
   return (
     <div className='main'>    
       <p className='text pink-text first-p'>
@@ -41,11 +49,11 @@ function Main() {
           <input type="text" name="email" placeholder="Email address" />
         </label>    */}
         <input type="email"
-        placeholder="Enter your email"
-        className="email-input"
-        onChange={validateEmail}/>
-        <button className="submitImage">
-        <img className="icon-arrow" src='./images/icon-arrow.svg' alt='icon-arrow'/>
+          placeholder="Enter your email"
+          className="email-input"
+          onChange={validateEmail}/>
+        <button className="submitImage" onClick={changeButtonColor} >
+          <img className="icon-arrow" src='./images/icon-arrow.svg' alt='icon-arrow'/>
         </button>
         <div className={`errorIcon ${isValid ? 'success' : 'error'}`}>
           {errorIcon}

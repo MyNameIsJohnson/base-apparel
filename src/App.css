@@ -77,7 +77,9 @@ input {
   border: 1px hsl(0, 93%, 96%) solid;
   border-radius: 15px 0px 0px 15px;
 }
-
+.email-input:focus-visible {
+  outline-color: red;
+}
 ::placeholder {
   color: hsl(0, 45%, 94%);
 }
@@ -89,6 +91,12 @@ input {
   border-radius: 20px;
 }
 
+.submitImage:hover {
+  background: pink;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 0px pink;
+  border: 1px pink solid;
+}
 .icon-arrow{
   margin: 0px;
   padding: 0px;
@@ -98,7 +106,7 @@ input {
   color:red;
 }
 .success {
-  display: hidden;
+  display: none;
 }
 
 .error {
